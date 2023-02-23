@@ -4,8 +4,6 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract FogmetaRebuilderV1 is Ownable {
-
-    mapping(address => uint) public balances;
     address accountAddress;
     event AddressBalance(address from, address to, uint amount);
 
@@ -21,8 +19,14 @@ contract FogmetaRebuilderV1 is Ownable {
                     requested: amount,
                     available: address(msg.sender).balance
                 });
-            payable(msg.sender).transfer(amount);
-            balances[accountAddress] += amount;
+            payable(accountAddress).transfer(amount);
             emit AddressBalance(address(msg.sender),accountAddress,amount);
+    }
+
+    function getBalance() view public returns(uint){
+        return address(this).balance;
+    }
+
+    function deposit() public payable {
     }
 }
