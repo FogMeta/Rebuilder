@@ -23,10 +23,16 @@ contract FogmetaRebuilderV1 is Ownable {
             emit AddressBalance(address(msg.sender),accountAddress,amount);
     }
 
-    function getBalance() view public returns(uint){
-        return address(this).balance;
+    function withdraw(uint amount) public returns(bool){
+        payable(msg.sender).transfer(amount);
+        return true;
     }
 
-    function deposit() public payable {
+    function transferToken() public payable{
+
+    }
+
+    function getBalance() view public returns(uint){
+        return address(this).balance;
     }
 }
