@@ -31,8 +31,8 @@ func main() {
 	routersInit := routers.InitRouter()
 	endPoint := fmt.Sprintf(":%d", model.ServerSetting.HttpPort)
 	maxHeaderBytes := 1 << 20
-	//go service.WatchIpfsNodeData()
-	//go service.AutoUploadFileToIpfs()
+	go service.WatchIpfsNodeData()
+	go service.AutoUploadFileToIpfs()
 	endless.DefaultMaxHeaderBytes = maxHeaderBytes
 	server := endless.NewServer(endPoint, routersInit)
 	server.BeforeBegin = func(add string) {
