@@ -1,6 +1,6 @@
 # FogMeta-Data-Rebuilder
 
-FogMeta Data Rebuilder (Replication and Repair) is a guaranteed storage service based on the FEVM contract. It guarantees N replicas stored on filecoin network, 50% of the storage fund locked in FEVM contract will be used for the initial storage copies and the remaining 50% will be used for future replication when the data replicas loss occurs within the term. 
+FogMeta Data Rebuilder (Replication and Repair) is a guaranteed storage service based on the FEVM contract. It guarantees N replicas stored on the Decentralized Storage network, 50% of the storage fund locked in FEVM contract will be used for the initial storage copies and the remaining 50% will be used for future replication when the data replicas loss occurs within the term. 
 
 The reserved fee percentile is based on the current average storage provider failure rate. Assuming the current failure rate per SP is 30% in the term, with 99.99% SLA, we need to maintain 8 replicas all the time. When a replicas loss occurs, a 5% fee will be used for the fee of the replica deal, and unused funds in the contract will be refunded to the user after the term expired. The project won the Data Dao hackathon in 2022. 
 
