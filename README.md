@@ -4,15 +4,13 @@ FogMeta Data Rebuilder (Replication and Repair) is a guaranteed storage service 
 
 The reserved fee percentile is based on the current average storage provider failure rate. Assuming the current failure rate per SP is 30% in the term, with 99.99% SLA, we need to maintain 8 replicas all the time. When a replicas loss occurs, a 5% fee will be used for the fee of the replica deal, and unused funds in the contract will be refunded to the user after the term expired. The project won the Data Dao hackathon in 2022. 
 
-The project has been deployed to the filecoin mainnet, you can visit [here](http://rebuilder.fogmeta.com)
-
 
 ## Features
 
- - **Build** (IPFS To Filecoin): Use the [MCS SDK](https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk) to upload the data to the IPFS node.
- - **Rebuild** (Filecoin To IPFS): 
+ - **Build** (IPFS To Decentralized Storage Network): Use the [MCS SDK](https://docs.filswan.com/multi-chain-storage/developer-quickstart/sdk) to upload the data to the IPFS node.
+ - **Rebuild** (Decentralized Storage Network To IPFS): 
 	- Find the storage providers' peerIds by the [Indexer node](https://github.com/filecoin-project/index-provider) 
-	- Get the storage providers IDs from the [Filecoin Network](https://github.com/filecoin-project/lotus/blob/master/api/v0api/full.go)
+	- Get the storage providers IDs from the [Decentralized Storage Network](https://github.com/filecoin-project/lotus/blob/master/api/v0api/full.go)
 	- Retrieve the data from the storage providers using [Lotus](https://github.com/filecoin-project/lotus)
 	- Upload the data to the IPFS nodes
 * **CID-Discover (IPFS)**: Rebuilder will check if the data content is available on the IPFS gateway 
@@ -33,7 +31,7 @@ The project has been deployed to the filecoin mainnet, you can visit [here](http
  - Install and Compile
 ```shell
 git clone https://github.com/Fogmeta/Rebuilder.git
-cd filecoin-ipfs-data-rebuilder
+cd Rebuilder.git
 make
 ```
 
